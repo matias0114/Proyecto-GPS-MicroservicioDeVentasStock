@@ -53,7 +53,7 @@ class PacienteServiceTest {
         dto.setDireccion("Calle Falsa 123");
         dto.setTelefono("555-1234");
     }
-
+    
     @Test
     void findAll_debeDevolverListaDeDTOS() {
         when(repo.findAll()).thenReturn(List.of(entidad));

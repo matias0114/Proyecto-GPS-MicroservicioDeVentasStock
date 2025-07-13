@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  microservicio-ventas-stock:
+    image: matiasjara1901244/proyecto-gps-microserviciodeventasstock:latest
+    container_name: microservicio-ventas-stock
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://dpg-d1osq23uibrs73d4hrig-a.oregon-postgres.render.com:5432/postgresss_33h5?sslmode=require
+      SPRING_DATASOURCE_USERNAME: postgresss_33h5_user
+      SPRING_DATASOURCE_PASSWORD: 8lsWOLx1Ub4jFnMKJFrnTXZTBcJ2VgbH
+    restart: always
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    external: true
