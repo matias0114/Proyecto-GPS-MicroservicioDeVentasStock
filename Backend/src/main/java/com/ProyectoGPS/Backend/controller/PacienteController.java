@@ -1,14 +1,20 @@
 package com.ProyectoGPS.Backend.controller;
 
-import com.ProyectoGPS.Backend.dto.PacienteDTO;
-import com.ProyectoGPS.Backend.service.PacienteService;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;            // <— Asegúrate de esto
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import com.ProyectoGPS.Backend.dto.PacienteDTO;
+import com.ProyectoGPS.Backend.service.PacienteService;
 
 @RestController
 @RequestMapping("/api/pacientes")
