@@ -52,6 +52,8 @@ pipeline {
                 --restart always \\
                 ${IMAGE_NAME}:latest
             '
+
+            docker network connect backend-net microservicio-ventas-stock
           """
         }
       }
