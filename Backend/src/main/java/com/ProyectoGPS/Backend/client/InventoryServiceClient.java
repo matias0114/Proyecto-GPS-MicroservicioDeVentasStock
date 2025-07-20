@@ -28,7 +28,7 @@ public class InventoryServiceClient {
 
     private final RestTemplate restTemplate;
 
-    @Value("${app.services.inventory.base-url:http://localhost:8081}")
+    @Value("${app.services.inventory.base-url:http://microservicio-gestion-de-inventarios:8081}")
     private String inventoryServiceBaseUrl;
 
     public InventoryServiceClient(RestTemplate restTemplate) {
