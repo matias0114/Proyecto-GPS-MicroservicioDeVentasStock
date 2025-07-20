@@ -217,7 +217,14 @@ public class SaleService {
                                    BigDecimal unitPrice, SaleItem.PricingMethod pricingMethod) {
         SaleItem saleItem = new SaleItem();
         saleItem.setProductId(inventory.getBatch().getProduct().getId());
-        saleItem.setProductCode("PROD-" + inventory.getBatch().getProduct().getId()); // Generar código basado en ID
+        
+        // Usar código real del producto con fallback por seguridad
+        String productCode = inventory.getBatch().getProduct().getCode();
+        if (productCode == null || productCode.trim().isEmpty()) {
+            productCode = "PROD-" + inventory.getBatch().getProduct().getId(); // Fallback para compatibilidad
+        }
+        saleItem.setProductCode(productCode);
+        
         saleItem.setProductName(inventory.getBatch().getProduct().getName());
         saleItem.setBatchId(inventory.getBatchId());
         saleItem.setBatchNumber(inventory.getBatch().getBatchNumber());
