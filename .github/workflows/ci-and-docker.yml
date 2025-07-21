@@ -30,6 +30,14 @@ jobs:
       - name: Build MicroservicioVentasStock (Maven)
         working-directory: Backend
         run: mvn clean install
+      
+      - name: Run Unit Tests
+        working-directory: Backend
+        run: mvn test
+
+      - name: Run Integration Tests
+        working-directory: Backend
+        run: mvn verify -Dspring.profiles.active=test
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
