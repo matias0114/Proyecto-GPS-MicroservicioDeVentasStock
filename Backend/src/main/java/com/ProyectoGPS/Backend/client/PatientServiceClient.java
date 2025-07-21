@@ -21,7 +21,7 @@ public class PatientServiceClient {
 
     private final RestTemplate restTemplate;
 
-    @Value("${app.services.patient.base-url:http://localhost:8080}")
+    @Value("${app.services.patient.base-url:http://gps-backend:8080}")
     private String patientServiceBaseUrl;
 
     public PatientServiceClient(RestTemplate restTemplate) {
